@@ -1,0 +1,53 @@
+datasource DS {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = "native"
+}
+
+// Define your own datamodels here and run `yarn redwood prisma migrate dev`
+// to create migrations for them and apply to your dev DB.
+// TODO: Please remove the following example:
+model UserExample {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
+}
+
+
+model Food {
+  id        Int      @id @default(autoincrement())
+  name     String
+  imgurl   String?
+  stock      Int @default(0)
+  packSize      Int @default(0)
+  servingSize      Int
+  calories          Float
+  totalFat          Float
+  sodium          Float
+  protein          Float
+  carbs           Float
+  price           Float
+  category  Category @default(Fruit)
+  regular Boolean
+  createdAt DateTime @default(now())
+}
+
+enum Category{
+Fruit
+Snack
+CanMeat
+CanVeg
+Veg
+Grains
+Drink
+}
+model RW_DataMigration {
+  version    String   @id
+  name       String
+  startedAt  DateTime
+  finishedAt DateTime
+}
