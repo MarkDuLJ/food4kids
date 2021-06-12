@@ -123,7 +123,7 @@ const FoodForm = (props) => {
           className="rw-input"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
-          dataType="Float"
+          transformValue="Float"
         />
         <FieldError name="calories" className="rw-field-error" />
 
@@ -140,7 +140,7 @@ const FoodForm = (props) => {
           className="rw-input"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
-          dataType="Float"
+          transformValue="Float"
         />
         <FieldError name="totalFat" className="rw-field-error" />
 
@@ -157,7 +157,7 @@ const FoodForm = (props) => {
           className="rw-input"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
-          dataType="Float"
+          transformValue="Float"
         />
         <FieldError name="sodium" className="rw-field-error" />
 
@@ -174,7 +174,7 @@ const FoodForm = (props) => {
           className="rw-input"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
-          dataType="Float"
+          transformValue="Float"
         />
         <FieldError name="protein" className="rw-field-error" />
 
@@ -191,7 +191,7 @@ const FoodForm = (props) => {
           className="rw-input"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
-          dataType="Float"
+          transformValue="Float"
         />
         <FieldError name="carbs" className="rw-field-error" />
 
@@ -208,7 +208,7 @@ const FoodForm = (props) => {
           className="rw-input"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
-          dataType="Float"
+          transformValue="Float"
         />
         <FieldError name="price" className="rw-field-error" />
 
