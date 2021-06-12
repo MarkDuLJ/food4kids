@@ -18,7 +18,7 @@ const ContactPage = () => {
                 alt="map"
               />
               <div className="w-full flex flex-col items-start  xl:justify-start  relative z-20 xl:px-0 px-4 xl:py-0 py-4">
-                <div className="w-full 2xl:pl-48 xl:pt-1">
+                <div className="w-full 2xl:pl-8 xl:pt-1">
                   <h1 className="text-xl md:text-3xl lg:text-5xl font-bold tracking-wider text-gray-800">
                     Feed a Kid This Summer
                   </h1>
@@ -34,8 +34,7 @@ const ContactPage = () => {
                         Address
                       </h2>
                       <h2 className="text-gray-800 text-base md:text-lg leading-8 tracking-wider mt-2">
-                        Food4Kids Waterloo Region 10 Washburn Drive, Unit 4,
-                        Kitchener, ON N2R 1S2
+                       10 Washburn Drive Unit 4, Kitchener ON N2R 1S2
                       </h2>
                     </div>
                     <div className="mt-4 md:mt-8">
