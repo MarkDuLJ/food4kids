@@ -6,8 +6,10 @@ import {
   TextField,
   NumberField,
   CheckboxField,
+  SelectField,
   Submit,
 } from '@redwoodjs/forms'
+import { Category } from '@prisma/client'
 
 const formatDatetime = (value) => {
   if (value) {
@@ -146,7 +148,7 @@ const FoodForm = (props) => {
 
         <Label
           name="sodium"
-          className="rw-label"
+          className="rw-label uppercase"
           errorClassName="rw-label rw-label-error"
         >
           Sodium
@@ -219,13 +221,17 @@ const FoodForm = (props) => {
         >
           Category
         </Label>
-        <TextField
+        <SelectField
           name="category"
           defaultValue={props.food?.category}
           className="rw-input"
           errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
-        />
+        >
+          {Object.keys(Category).map((cat, i) => (
+            <option key={i}>{cat}</option>
+          ))}
+        </SelectField>
         <FieldError name="category" className="rw-field-error" />
 
         <Label

@@ -36,7 +36,7 @@ export const Success = ({ foods }) => {
           </Link>
         </h2>
       </header>
-      <img src={food.imgurl} />
+      <img src={food.imgurl} alt="" />
       <p>{food.price}</p>
       <p>{food.stock}</p>
       <div>Category: {food.category}</div>
