@@ -10,14 +10,14 @@ const NutritionLayout = ({ children }) => {
             className="text-white-400 hover:text-blue-100 bg-white transition duration-100"
             to={routes.home()}
           >
-            <img src={logo} alt="food4kids"  />
+            <img src={logo} alt="food4kids" />
           </Link>
         </h1>
         <nav>
           <ul className="relative flex items-center font-light">
             <li>
               <Link
-                className="py-2 px-4 hover:bg-blue-300 transition duration-100 rounded"
+                className="py-2 px-4 hover:bg-blue-300 transition duration-100 rounded uppercase"
                 to={routes.nutrition()}
               >
                 Nutrition
@@ -25,7 +25,7 @@ const NutritionLayout = ({ children }) => {
             </li>
             <li>
               <Link
-                className="py-2 px-4 hover:bg-blue-300 transition duration-100 rounded"
+                className="py-2 px-4 hover:bg-blue-300 transition duration-100 rounded uppercase"
                 to={routes.about()}
               >
                 About
@@ -33,7 +33,7 @@ const NutritionLayout = ({ children }) => {
             </li>
             <li>
               <Link
-                className="py-2 px-4 hover:bg-blue-300 transition duration-100 rounded"
+                className="py-2 px-4 hover:bg-blue-300 transition duration-100 rounded uppercase"
                 to={routes.contact()}
               >
                 Contact
@@ -41,7 +41,7 @@ const NutritionLayout = ({ children }) => {
             </li>
             <li>
               <a
-                className="py-2 px-4 hover:bg-blue-300 transition duration-100 rounded"
+                className="py-2 px-4 hover:bg-blue-300 transition duration-100 rounded uppercase"
                 href="#"
               >
                 Log In

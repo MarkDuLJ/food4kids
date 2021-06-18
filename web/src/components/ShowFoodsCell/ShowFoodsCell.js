@@ -1,5 +1,6 @@
-import { Link, routes } from '@redwoodjs/router'
+import { Category } from '@prisma/client'
 
+import Showfoods from 'src/components/Showfoods'
 export const QUERY = gql`
   query ShowFoodsQuery {
     foods {
@@ -23,23 +24,43 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 )
 
+const groupBy = (list, keyGetter) => {
+  const map = new Map()
+  list.forEach((item) => {
+    const key = keyGetter(item)
+    const collection = map.get(key)
+    if (!collection) {
+      map.set(key, [item])
+    } else {
+      collection.push(item)
+    }
+  })
+  return map
+}
+
 export const Success = ({ foods }) => {
-  return foods.map((food) => (
-    <article key={food.id} className="mt-150">
-      <header>
-        <h2 className="text-4xl font-bold text-center text-blue-400 ">
-          <Link
-            className="hover:text-blue-100 transition duration-100"
-            to={routes.singleFood({ id: food.id })}
-          >
-            {food.name}
-          </Link>
-        </h2>
-      </header>
-      <img src={food.imgurl} alt="" />
-      <p>{food.price}</p>
-      <p>{food.stock}</p>
-      <div>Category: {food.category}</div>
-    </article>
-  ))
+  const grouped = groupBy(foods, (food) => food.category)
+  return Object.values(Category).map((cat) => {
+    const categoryArr = grouped.get(cat)
+    console.log(categoryArr)
+    if (categoryArr) {
+      return (
+        <div className="mt-4 p-4">
+          <h2>{cat.toUpperCase()}:</h2>
+          <div className="grid grid-cols-3 gap-4">
+            {categoryArr.map((food, i) => (
+              <Showfoods food={food} key={i} />
+            ))}
+          </div>
+        </div>
+      )
+    } else {
+      return (
+        <div className="mt-4">
+          <h2>{cat.toUpperCase()}:</h2>
+          <p>empty data under {cat} category</p>
+        </div>
+      )
+    }
+  })
 }
