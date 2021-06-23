@@ -127,8 +127,11 @@ export const Success = ({ foods, snum, urnum }) => {
             </h1>
             <ul>
               {menuList.map((food, i) => (
-                <li key={i} className="mt-2">
-                  CATEGORY:{food.category} NAME:{food.name} CURRENT STOCK:
+                <li
+                  key={i}
+                  className="mt-3 text-lg font-bold text-center text-indigo-300 uppercase"
+                >
+                  {food.category} ---{food.name} LEFT:
                   {food.stock}
                   {/* <button
                     onClick={() => savetoDB(food.id, { stock: food.stock })}
@@ -150,7 +153,7 @@ export const Success = ({ foods, snum, urnum }) => {
               {wantedCategory.map((cat, i) => (
                 <li
                   key={i}
-                  className="text-lg font-bold text-center text-inidgo-300 uppercase"
+                  className="text-lg font-bold text-center text-indigo-300 uppercase"
                 >
                   {cat}
                 </li>
