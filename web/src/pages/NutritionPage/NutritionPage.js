@@ -2,15 +2,23 @@ import {
   Form,
   FormError,
   Label,
-  TextField,
-  TextAreaField,
+  NumberField,
   FieldError,
   Submit,
 } from '@redwoodjs/forms'
 
+import { useState } from 'react'
+
+import NutritionCell from 'src/components/NutritionCell'
 const NutritionPage = () => {
-  const onSubmit = () => {
-    // console.log(data)
+  const [s, sets] = useState(0)
+  const [ur, setur] = useState(0)
+  const onSubmit = (data) => {
+    if (data && data.student > 0 && data.urfood > 0) {
+      sets(data.student)
+      setur(data.urfood)
+      // console.log(s, ur)
+    }
   }
 
   return (
@@ -30,7 +38,7 @@ const NutritionPage = () => {
         >
           How many students for this week?
         </Label>
-        <TextField
+        <NumberField
           name="student"
           // defaultValue={props.post?.title}
           className="rw-input"
@@ -51,7 +59,7 @@ const NutritionPage = () => {
         >
           How many unregular foods we need?
         </Label>
-        <TextField
+        <NumberField
           name="urfood"
           // defaultValue={props.post?.title}
           className="rw-input"
@@ -64,9 +72,11 @@ const NutritionPage = () => {
           <Submit className="rw-button rw-button-blue">Generate Menu...</Submit>
         </div>
       </Form>
+      <div>
+        <NutritionCell snum={s} urnum={ur} />
+      </div>
     </div>
   )
 }
-
 
 export default NutritionPage

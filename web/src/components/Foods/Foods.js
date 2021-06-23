@@ -63,7 +63,7 @@ const FoodsList = ({ foods }) => {
           <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Imgurl</th>
+            {/* <th>Imgurl</th> */}
             <th>Stock</th>
             <th>Pack size</th>
             <th>Serving size</th>
@@ -84,7 +84,7 @@ const FoodsList = ({ foods }) => {
             <tr key={food.id}>
               <td>{truncate(food.id)}</td>
               <td>{truncate(food.name)}</td>
-              <td>{truncate(food.imgurl)}</td>
+              {/* <td>{truncate(food.imgurl)}</td> */}
               <td>{truncate(food.stock)}</td>
               <td>{truncate(food.packSize)}</td>
               <td>{truncate(food.servingSize)}</td>

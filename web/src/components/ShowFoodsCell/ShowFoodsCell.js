@@ -24,7 +24,7 @@ export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>
 )
 
-const groupBy = (list, keyGetter) => {
+export const groupBy = (list, keyGetter) => {
   const map = new Map()
   list.forEach((item) => {
     const key = keyGetter(item)
